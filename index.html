@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microservices Architecture Implementation Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar__header">
+                <h2>Microservices Guide</h2>
+            </div>
+            <div class="sidebar__nav">
+                <button class="nav-item active" data-section="dashboard">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </button>
+                <div class="nav-group">
+                    <h3>Implementation Phases</h3>
+                    <button class="nav-item" data-section="phase-1">
+                        <span class="phase-indicator">1</span>
+                        Project Setup
+                    </button>
+                    <button class="nav-item" data-section="phase-2">
+                        <span class="phase-indicator">2</span>
+                        Infrastructure
+                    </button>
+                    <button class="nav-item" data-section="phase-3">
+                        <span class="phase-indicator">3</span>
+                        Development
+                    </button>
+                    <button class="nav-item" data-section="phase-4">
+                        <span class="phase-indicator">4</span>
+                        Containerization
+                    </button>
+                    <button class="nav-item" data-section="phase-5">
+                        <span class="phase-indicator">5</span>
+                        Kubernetes
+                    </button>
+                    <button class="nav-item" data-section="phase-6">
+                        <span class="phase-indicator">6</span>
+                        CI/CD Pipeline
+                    </button>
+                </div>
+                <button class="nav-item" data-section="code-examples">
+                    <span class="nav-icon">💻</span>
+                    Code Examples
+                </button>
+                <button class="nav-item" data-section="architecture">
+                    <span class="nav-icon">🏗️</span>
+                    Architecture
+                </button>
+                <button class="nav-item" data-section="calculator">
+                    <span class="nav-icon">📈</span>
+                    Cost Calculator
+                </button>
+                <button class="nav-item" data-section="troubleshooting">
+                    <span class="nav-icon">🔧</span>
+                    Troubleshooting
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="dashboard">
+                    <div class="dashboard__header">
+                        <h1>Microservices Architecture Implementation</h1>
+                        <p>A comprehensive guide to building scalable microservices with Docker, Kubernetes, and AWS</p>
+                    </div>
+
+                    <div class="dashboard__grid">
+                        <!-- Project Overview -->
+                        <div class="card dashboard__overview">
+                            <div class="card__body">
+                                <h3>Project Overview</h3>
+                                <p>Build a complete microservices architecture including User Service, Payment Service, and Inventory Service using modern DevOps practices.</p>
+                                <div class="tech-stack">
+                                    <div class="tech-category">
+                                        <h4>Backend</h4>
+                                        <div class="tech-tags">
+                                            <span class="tech-tag">Node.js</span>
+                                            <span class="tech-tag">Express.js</span>
+                                            <span class="tech-tag">MongoDB</span>
+                                            <span class="tech-tag">Redis</span>
+                                        </div>
+                                    </div>
+                                    <div class="tech-category">
+                                        <h4>Infrastructure</h4>
+                                        <div class="tech-tags">
+                                            <span class="tech-tag">Docker</span>
+                                            <span class="tech-tag">Kubernetes</span>
+                                            <span class="tech-tag">AWS</span>
+                                            <span class="tech-tag">Terraform</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Stats -->
+                        <div class="card dashboard__stats">
+                            <div class="card__body">
+                                <h3>Quick Stats</h3>
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <div class="stat-number">15-22</div>
+                                        <div class="stat-label">Days</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">3-5</div>
+                                        <div class="stat-label">Team Size</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">6</div>
+                                        <div class="stat-label">Phases</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">4</div>
+                                        <div class="stat-label">Services</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline -->
+                        <div class="card dashboard__timeline">
+                            <div class="card__body">
+                                <h3>Implementation Timeline</h3>
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <h4>Setup & Planning</h4>
+                                            <span class="timeline-duration">1-2 days</span>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <h4>Infrastructure</h4>
+                                            <span class="timeline-duration">2-3 days</span>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <h4>Development</h4>
+                                            <span class="timeline-duration">5-7 days</span>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker"></div>
+                                        <div class="timeline-content">
+                                            <h4>Deployment</h4>
+                                            <span class="timeline-duration">7-10 days</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Overview -->
+                        <div class="card dashboard__progress">
+                            <div class="card__body">
+                                <h3>Overall Progress</h3>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="overall-progress"></div>
+                                </div>
+                                <div class="progress-text">
+                                    <span id="completed-tasks">0</span> of <span id="total-tasks">42</span> tasks completed
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phase Sections -->
+            <section id="phase-1" class="content-section phase-section">
+                <div class="phase-header">
+                    <div class="phase-badge">Phase 1</div>
+                    <h1>Project Setup & Planning</h1>
+                    <p>Initialize project structure and plan service architecture</p>
+                    <div class="phase-meta">
+                        <span class="phase-duration">⏱️ 1 day</span>
+                        <span class="phase-difficulty">🟢 Beginner</span>
+                    </div>
+                </div>
+
+                <div class="phase-content">
+                    <div class="task-list">
+                        <h3>Tasks Checklist</h3>
+                        <div class="task-item">
+                            <input type="checkbox" id="task-1-1" class="task-checkbox">
+                            <label for="task-1-1">Initialize Git repository structure</label>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task-1-2" class="task-checkbox">
+                            <label for="task-1-2">Set up development environment (Node.js, Docker, kubectl)</label>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task-1-3" class="task-checkbox">
+                            <label for="task-1-3">Plan microservice boundaries using Domain-Driven Design</label>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task-1-4" class="task-checkbox">
+                            <label for="task-1-4">Design API contracts and service interfaces</label>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task-1-5" class="task-checkbox">
+                            <label for="task-1-5">Create project documentation and README</label>
+                        </div>
+                    </div>
+
+                    <div class="instructions">
+                        <h3>Step-by-Step Instructions</h3>
+                        <div class="instruction-step">
+                            <h4>1. Initialize Git Repository</h4>
+                            <p>Create a monorepo structure to organize all microservices:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Terminal</span>
+                                    <button class="copy-btn" data-copy="mkdir microservices-project && cd microservices-project
+git init
+mkdir -p services/{user-service,payment-service,inventory-service,api-gateway}
+mkdir -p infrastructure/terraform
+mkdir -p k8s/manifests
+touch README.md docker-compose.yml">Copy</button>
+                                </div>
+                                <pre><code>mkdir microservices-project && cd microservices-project
+git init
+mkdir -p services/{user-service,payment-service,inventory-service,api-gateway}
+mkdir -p infrastructure/terraform
+mkdir -p k8s/manifests
+touch README.md docker-compose.yml</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="instruction-step">
+                            <h4>2. Development Environment Setup</h4>
+                            <p>Install required tools and dependencies:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Prerequisites</span>
+                                    <button class="copy-btn" data-copy="# Install Node.js (v16+)
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Install Docker
+curl -fsSL https://get.docker.com | sh
+sudo usermod -aG docker $USER
+
+# Install kubectl
+curl -LO https://dl.k8s.io/release/v1.24.0/bin/linux/amd64/kubectl
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+# Install Terraform
+wget https://releases.hashicorp.com/terraform/1.3.0/terraform_1.3.0_linux_amd64.zip
+unzip terraform_1.3.0_linux_amd64.zip
+sudo mv terraform /usr/local/bin/">Copy</button>
+                                </div>
+                                <pre><code># Install Node.js (v16+)
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Install Docker
+curl -fsSL https://get.docker.com | sh
+sudo usermod -aG docker $USER
+
+# Install kubectl
+curl -LO https://dl.k8s.io/release/v1.24.0/bin/linux/amd64/kubectl
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+# Install Terraform
+wget https://releases.hashicorp.com/terraform/1.3.0/terraform_1.3.0_linux_amd64.zip
+unzip terraform_1.3.0_linux_amd64.zip
+sudo mv terraform /usr/local/bin/</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional phase sections would follow similar pattern -->
+             <section id="phase-2" class="content-section phase-section">
+                <div class="phase-header">
+                   <p>Provision AWS infrastructure using Terraform</p>
+                    <div class="phase-meta">
+                        <span class="phase-duration">⏱️ 2-3 days</span>
+                        <span class="phase-difficulty">🟡 Intermediate</span>
+                    </div>
+                </div>
+            
+                <div class="phase-content">
+                    <section class="task-list">
+                        <h2>Tasks Checklist</h2>
+                        <div class="task-item">
+                            <input type="checkbox" id="task-2-1" class="task-checkbox">
+                            <label for="task-2-1">Configure AWS VPC with public/private subnets</label>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task-2-2" class="task-checkbox">
+                            <label for="task-2-2">Set up EKS cluster with managed node groups</label>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task-2-3" class="task-checkbox">
+                            <label for="task-2-3">Create ECR repositories for each microservice</label>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task-2-4" class="task-checkbox">
+                            <label for="task-2-4">Configure DocumentDB cluster for MongoDB workloads</label>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task-2-5" class="task-checkbox">
+                            <label for="task-2-5">Set up Redis cluster using ElastiCache</label>
+                        </div>
+                        <div class="task-item">
+                            <input type="checkbox" id="task-2-6" class="task-checkbox">
+                            <label for="task-2-6">Configure IAM roles and security groups</label>
+                        </div>
+                    </section>
+            
+                    <section class="instructions">
+                        <h3>Step-by-Step Instructions</h3>
+            
+                        <article class="instruction-step">
+                            <h4>1. Initialize Terraform Configuration</h4>
+                            <p>Set up a basic Terraform project to manage your infrastructure as code:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Terminal</span>
+                                    <button class="copy-btn" aria-label="Copy Terraform init commands" data-copy="cd infrastructure/terraform
+            touch main.tf variables.tf outputs.tf
+            terraform init">Copy</button>
+                                </div>
+            <pre><code>cd infrastructure/terraform
+            touch main.tf variables.tf outputs.tf
+            terraform init</code></pre>
+                            </div>
+                        </article>
+            
+                        <article class="instruction-step">
+                            <h4>2. Sample VPC Setup</h4>
+                            <p>Use the official AWS VPC module to create a production-ready VPC:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>main.tf</span>
+                                    <button class="copy-btn" aria-label="Copy VPC code block" data-copy='module "vpc" {
+              source  = "terraform-aws-modules/vpc/aws"
+              version = "3.19.0"
+            
+              name = "my-vpc"
+              cidr = "10.0.0.0/16"
+            
+              azs             = ["us-east-1a", "us-east-1b"]
+              public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
+              private_subnets = ["10.0.3.0/24", "10.0.4.0/24"]
+            
+              enable_nat_gateway = true
+              single_nat_gateway = true
+            
+              tags = {
+                Terraform = "true"
+                Environment = "dev"
+              }
+            }'>Copy</button>
+                                </div>
+            <pre><code>module "vpc" {
+              source  = "terraform-aws-modules/vpc/aws"
+              version = "3.19.0"
+            
+              name = "my-vpc"
+              cidr = "10.0.0.0/16"
+            
+              azs             = ["us-east-1a", "us-east-1b"]
+              public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
+              private_subnets = ["10.0.3.0/24", "10.0.4.0/24"]
+            
+              enable_nat_gateway = true
+              single_nat_gateway = true
+            
+              tags = {
+                Terraform = "true"
+                Environment = "dev"
+              }
+            }</code></pre>
+                            </div>
+                        </article>
+            
+                        <article class="instruction-step">
+                            <h3>3. Apply Infrastructure</h3>
+                            <p>After defining resources, run the following commands to deploy:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Terminal</span>
+                                    <button class="copy-btn" aria-label="Copy terraform apply commands" data-copy="terraform plan
+            terraform apply">Copy</button>
+                                </div>
+            <pre><code>terraform plan 
+terraform apply</code></pre>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </section>
+            
+
+            <!-- Code Examples Section -->
+            <section id="code-examples" class="content-section">
+                <div class="section-header">
+                    <h1>Code Examples & Templates</h1>
+                    <p>Ready-to-use code snippets and configuration templates</p>
+                </div>
+
+                <div class="examples-grid">
+                    <div class="card example-card">
+                        <div class="card__body">
+                            <h3>Dockerfile Template</h3>
+                            <p>Optimized Dockerfile for Node.js microservices</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>Dockerfile</span>
+                                    <button class="copy-btn" data-copy="FROM node:16-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production && npm cache clean --force
+
+# Copy source code
+COPY . .
+
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001
+USER nodejs
+
+EXPOSE 3001
+
+CMD [&quot;npm&quot;, &quot;start&quot;]">Copy</button>
+                                </div>
+                                <pre><code>FROM node:16-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production && npm cache clean --force
+
+# Copy source code
+COPY . .
+
+# Create non-root user
+RUN addgroup -g 1001 -S nodejs && adduser -S nodejs -u 1001
+USER nodejs
+
+EXPOSE 3001
+
+CMD ["npm", "start"]</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card example-card">
+                        <div class="card__body">
+                            <h3>Terraform EKS Cluster</h3>
+                            <p>EKS cluster configuration with managed node groups</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>main.tf</span>
+                                    <button class="copy-btn" data-copy="resource &quot;aws_eks_cluster&quot; &quot;main&quot; {
+  name     = var.cluster_name
+  role_arn = aws_iam_role.cluster.arn
+  version  = &quot;1.24&quot;
+
+  vpc_config {
+    subnet_ids = var.subnet_ids
+    endpoint_private_access = true
+    endpoint_public_access  = true
+  }
+
+  depends_on = [
+    aws_iam_role_policy_attachment.cluster-AmazonEKSClusterPolicy,
+  ]
+}
+
+resource &quot;aws_eks_node_group&quot; &quot;main&quot; {
+  cluster_name    = aws_eks_cluster.main.name
+  node_group_name = &quot;main-nodes&quot;
+  node_role_arn   = aws_iam_role.node.arn
+  subnet_ids      = var.private_subnet_ids
+
+  scaling_config {
+    desired_size = 3
+    max_size     = 5
+    min_size     = 1
+  }
+
+  instance_types = [&quot;t3.medium&quot;]
+
+  depends_on = [
+    aws_iam_role_policy_attachment.node-AmazonEKSWorkerNodePolicy,
+    aws_iam_role_policy_attachment.node-AmazonEKS_CNI_Policy,
+    aws_iam_role_policy_attachment.node-AmazonEC2ContainerRegistryReadOnly,
+  ]
+}">Copy</button>
+                                </div>
+                                <pre><code>resource "aws_eks_cluster" "main" {
+  name     = var.cluster_name
+  role_arn = aws_iam_role.cluster.arn
+  version  = "1.24"
+
+  vpc_config {
+    subnet_ids = var.subnet_ids
+    endpoint_private_access = true
+    endpoint_public_access  = true
+  }
+
+  depends_on = [
+    aws_iam_role_policy_attachment.cluster-AmazonEKSClusterPolicy,
+  ]
+}
+
+resource "aws_eks_node_group" "main" {
+  cluster_name    = aws_eks_cluster.main.name
+  node_group_name = "main-nodes"
+  node_role_arn   = aws_iam_role.node.arn
+  subnet_ids      = var.private_subnet_ids
+
+  scaling_config {
+    desired_size = 3
+    max_size     = 5
+    min_size     = 1
+  }
+
+  instance_types = ["t3.medium"]
+
+  depends_on = [
+    aws_iam_role_policy_attachment.node-AmazonEKSWorkerNodePolicy,
+    aws_iam_role_policy_attachment.node-AmazonEKS_CNI_Policy,
+    aws_iam_role_policy_attachment.node-AmazonEC2ContainerRegistryReadOnly,
+  ]
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card example-card">
+                        <div class="card__body">
+                            <h3>Kubernetes Deployment</h3>
+                            <p>Deployment manifest for microservices</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span>deployment.yaml</span>
+                                    <button class="copy-btn" data-copy="apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service
+  labels:
+    app: user-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: user-service
+  template:
+    metadata:
+      labels:
+        app: user-service
+    spec:
+      containers:
+      - name: user-service
+        image: your-account.dkr.ecr.region.amazonaws.com/user-service:latest
+        ports:
+        - containerPort: 3001
+        env:
+        - name: NODE_ENV
+          value: &quot;production&quot;
+        - name: MONGODB_URI
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: mongodb-uri
+        resources:
+          requests:
+            memory: &quot;128Mi&quot;
+            cpu: &quot;100m&quot;
+          limits:
+            memory: &quot;256Mi&quot;
+            cpu: &quot;200m&quot;
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3001
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 3001
+          initialDelaySeconds: 5
+          periodSeconds: 5">Copy</button>
+                                </div>
+                                <pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service
+  labels:
+    app: user-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: user-service
+  template:
+    metadata:
+      labels:
+        app: user-service
+    spec:
+      containers:
+      - name: user-service
+        image: your-account.dkr.ecr.region.amazonaws.com/user-service:latest
+        ports:
+        - containerPort: 3001
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: MONGODB_URI
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: mongodb-uri
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3001
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 3001
+          initialDelaySeconds: 5
+          periodSeconds: 5</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Architecture Section -->
+            <section id="architecture" class="content-section">
+                <div class="section-header">
+                    <h1>System Architecture</h1>
+                    <p>Visual overview of the microservices architecture and data flow</p>
+                </div>
+
+                <div class="architecture-grid">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Service Architecture</h3>
+                            <div class="architecture-diagram">
+                                <div class="service-layer">
+                                    <h4>Client Layer</h4>
+                                    <div class="service-box client">Web App / Mobile App</div>
+                                </div>
+                                <div class="service-layer">
+                                    <h4>API Gateway</h4>
+                                    <div class="service-box gateway">API Gateway (Port 3000)</div>
+                                </div>
+                                <div class="service-layer">
+                                    <h4>Microservices</h4>
+                                    <div class="services-row">
+                                        <div class="service-box user">User Service<br>Port 3001</div>
+                                        <div class="service-box payment">Payment Service<br>Port 3002</div>
+                                        <div class="service-box inventory">Inventory Service<br>Port 3003</div>
+                                    </div>
+                                </div>
+                                <div class="service-layer">
+                                    <h4>Data Layer</h4>
+                                    <div class="services-row">
+                                        <div class="service-box database">MongoDB<br>(DocumentDB)</div>
+                                        <div class="service-box cache">Redis<br>(ElastiCache)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Technology Stack</h3>
+                            <div class="tech-stack-diagram">
+                                <div class="tech-layer">
+                                    <h4>Development</h4>
+                                    <div class="tech-items">
+                                        <span class="tech-item">Node.js</span>
+                                        <span class="tech-item">Express.js</span>
+                                        <span class="tech-item">Mongoose</span>
+                                    </div>
+                                </div>
+                                <div class="tech-layer">
+                                    <h4>Containerization</h4>
+                                    <div class="tech-items">
+                                        <span class="tech-item">Docker</span>
+                                        <span class="tech-item">Docker Compose</span>
+                                    </div>
+                                </div>
+                                <div class="tech-layer">
+                                    <h4>Orchestration</h4>
+                                    <div class="tech-items">
+                                        <span class="tech-item">Kubernetes</span>
+                                        <span class="tech-item">Amazon EKS</span>
+                                    </div>
+                                </div>
+                                <div class="tech-layer">
+                                    <h4>Infrastructure</h4>
+                                    <div class="tech-items">
+                                        <span class="tech-item">Terraform</span>
+                                        <span class="tech-item">AWS VPC</span>
+                                        <span class="tech-item">AWS IAM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cost Calculator Section -->
+            <section id="calculator" class="content-section">
+                <div class="section-header">
+                    <h1>Resource & Cost Calculator</h1>
+                    <p>Estimate AWS costs and resource requirements for your implementation</p>
+                </div>
+
+                <div class="calculator-grid">
+                    <div class="card calculator-inputs">
+                        <div class="card__body">
+                            <h3>Configuration</h3>
+                            <div class="form-group">
+                                <label class="form-label">Environment Type</label>
+                                <select class="form-control" id="env-type">
+                                    <option value="development">Development</option>
+                                    <option value="staging">Staging</option>
+                                    <option value="production">Production</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Team Size</label>
+                                <select class="form-control" id="team-size">
+                                    <option value="3">3 developers</option>
+                                    <option value="4">4 developers</option>
+                                    <option value="5">5 developers</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Expected Traffic (req/min)</label>
+                                <select class="form-control" id="traffic-level">
+                                    <option value="low">Low (< 1000)</option>
+                                    <option value="medium">Medium (1000-10000)</option>
+                                    <option value="high">High (> 10000)</option>
+                                </select>
+                            </div>
+                            <button class="btn btn--primary btn--full-width" onclick="calculateCosts()">Calculate Estimates</button>
+                        </div>
+                    </div>
+
+                    <div class="card calculator-results">
+                        <div class="card__body">
+                            <h3>Cost Estimates</h3>
+                            <div class="cost-breakdown" id="cost-breakdown">
+                                <div class="cost-row">
+                                    <span>EKS Cluster</span>
+                                    <span class="cost-value">$72/month</span>
+                                </div>
+                                <div class="cost-row">
+                                    <span>EC2 Instances (3x t3.medium)</span>
+                                    <span class="cost-value">$95/month</span>
+                                </div>
+                                <div class="cost-row">
+                                    <span>DocumentDB</span>
+                                    <span class="cost-value">$85/month</span>
+                                </div>
+                                <div class="cost-row">
+                                    <span>ElastiCache Redis</span>
+                                    <span class="cost-value">$45/month</span>
+                                </div>
+                                <div class="cost-row">
+                                    <span>Load Balancer</span>
+                                    <span class="cost-value">$25/month</span>
+                                </div>
+                                <div class="cost-row total">
+                                    <span><strong>Total Monthly Cost</strong></span>
+                                    <span class="cost-value"><strong id="total-cost">$322/month</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="time-estimates">
+                                <h4>Time Estimates</h4>
+                                <div class="time-breakdown">
+                                    <div class="time-row">
+                                        <span>Development Time</span>
+                                        <span id="dev-time">15-22 days</span>
+                                    </div>
+                                    <div class="time-row">
+                                        <span>Team Productivity</span>
+                                        <span id="productivity">High</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Troubleshooting Section -->
+            <section id="troubleshooting" class="content-section">
+                <div class="section-header">
+                    <h1>Troubleshooting Guide</h1>
+                    <p>Common issues and solutions for microservices implementation</p>
+                </div>
+
+                <div class="troubleshooting-grid">
+                    <div class="card trouble-card">
+                        <div class="card__body">
+                            <h3>🐳 Docker Issues</h3>
+                            <div class="trouble-item">
+                                <h4>Container fails to start</h4>
+                                <p><strong>Solution:</strong> Check Docker logs and verify port availability</p>
+                                <div class="code-block small">
+                                    <pre><code>docker logs container-name
+docker ps -a
+netstat -tulpn | grep :3001</code></pre>
+                                </div>
+                            </div>
+                            <div class="trouble-item">
+                                <h4>Image build fails</h4>
+                                <p><strong>Solution:</strong> Clear Docker cache and rebuild</p>
+                                <div class="code-block small">
+                                    <pre><code>docker system prune -a
+docker build --no-cache -t service-name .</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card trouble-card">
+                        <div class="card__body">
+                            <h3>☸️ Kubernetes Issues</h3>
+                            <div class="trouble-item">
+                                <h4>Pod not starting</h4>
+                                <p><strong>Solution:</strong> Check pod status and events</p>
+                                <div class="code-block small">
+                                    <pre><code>kubectl get pods
+kubectl describe pod pod-name
+kubectl logs pod-name</code></pre>
+                                </div>
+                            </div>
+                            <div class="trouble-item">
+                                <h4>Service not accessible</h4>
+                                <p><strong>Solution:</strong> Verify service and ingress configuration</p>
+                                <div class="code-block small">
+                                    <pre><code>kubectl get svc
+kubectl get ingress
+kubectl port-forward svc/service-name 8080:80</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card trouble-card">
+                        <div class="card__body">
+                            <h3>☁️ AWS Issues</h3>
+                            <div class="trouble-item">
+                                <h4>EKS cluster access denied</h4>
+                                <p><strong>Solution:</strong> Update kubeconfig and verify IAM permissions</p>
+                                <div class="code-block small">
+                                    <pre><code>aws eks update-kubeconfig --name cluster-name
+kubectl auth can-i "*" "*"</code></pre>
+                                </div>
+                            </div>
+                            <div class="trouble-item">
+                                <h4>Terraform apply fails</h4>
+                                <p><strong>Solution:</strong> Check AWS credentials and resource limits</p>
+                                <div class="code-block small">
+                                    <pre><code>terraform validate
+terraform plan
+aws sts get-caller-identity</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card trouble-card">
+                        <div class="card__body">
+                            <h3>🔧 General Debug Commands</h3>
+                            <div class="debug-commands">
+                                <div class="code-block">
+                                    <div class="code-header">
+                                        <span>Useful Commands</span>
+                                        <button class="copy-btn" data-copy="# Check all running containers
+docker ps
+
+# View Kubernetes cluster info
+kubectl cluster-info
+
+# Check node status
+kubectl get nodes
+
+# View all resources
+kubectl get all
+
+# Check AWS CLI configuration
+aws configure list
+
+# Test connectivity
+curl -v http://service-url/health">Copy</button>
+                                    </div>
+                                    <pre><code># Check all running containers
+docker ps
+
+# View Kubernetes cluster info
+kubectl cluster-info
+
+# Check node status
+kubectl get nodes
+
+# View all resources
+kubectl get all
+
+# Check AWS CLI configuration
+aws configure list
+
+# Test connectivity
+curl -v http://service-url/health</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
