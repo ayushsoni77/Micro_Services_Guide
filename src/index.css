@@ -353,7 +353,8 @@ pre code {
   border-radius: var(--radius-base);
   padding: var(--space-8) var(--space-12);
   cursor: pointer;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
+  align-items: center;
 }
 
 /* Sidebar overlay for mobile */
@@ -390,7 +391,7 @@ pre code {
   }
 
   .mobile-menu-toggle {
-    display: block;
+    display: flex;
   }
 
   .sidebar-overlay.active {
